@@ -9,10 +9,18 @@ This GitHub Action is useful tool to copy helm charts from parent repository to 
 
 ## Table of Contents
 
-- Usage
-- [Examples](#example-workflow)
-- [Variables](#variables)
-- [Notes](#behavior-notes)
+- [copy-helm](#copy-helm)
+  - [Table of Contents](#table-of-contents)
+  - [Usage](#usage)
+  - [Example Workflow](#example-workflow)
+  - [Variables](#variables)
+  - [Behavior Notes](#behavior-notes)
+
+## Usage
+
+1. Implement by createing your own workflow
+
+some text...
 
 ---
 
