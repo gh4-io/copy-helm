@@ -1,0 +1,31 @@
+## Source: https://github.com/marketplace/actions/push-a-directory-to-another-repository
+
+name: Push File
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'master'
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes source files
+      uses: ./.github/actions/
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_folder: './'
+        destination_repo: 'dmnemec/release-test'
+        destination_branch: 'test'
+        destination_folder: 'charts/papermerge'
+        user_email: 'devin.nemec@gmail.com'
+        user_name: 'dmnemec'
+        commit_msg: 'Push post update'
+        clean_files: '.git,.git*,.vscode,*.tgz,.values*'
+        debug: false
