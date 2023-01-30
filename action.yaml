@@ -35,18 +35,18 @@ runs:
   using: 'composite'
   steps:
       - run: apt-get update && apt-get install -y git
-        shell: bash
+        shell: 
       - run: ${{ github.action_path }}/setup.sh
-        shell: bash
+        shell: 
         name: Setup
       - run: ${{ github.action_path }}/clean.sh
-        shell: bash
+        shell: 
         name: Clean
       - run: ${{ github.action_path }}/move.sh
-        shell: bash
+        shell: 
         name: move
       - run: ${{ github.action_path }}/commit.sh
-        shell: bash
+        shell: 
         name: commit
 branding:
   icon: 'git-commit'
