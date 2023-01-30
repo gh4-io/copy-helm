@@ -34,13 +34,17 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: apt-get update && apt-get install -y git
-    - run: ${{ github.action_path }}/setup.sh
-      name: Setup
-    - run: ${{ github.action_path }}/move.sh
-      name: Move
-    - run: ${{ github.action_path }}/commit.sh
-      name: Commit 
+    setup:
+      - run: apt-get update && apt-get install -y git
+        shell: bash
+      - run: ${{ github.action_path }}/setup.sh
+        shell: bash
+    move:
+      - run: ${{ github.action_path }}/move.sh
+        shell: bash
+    commit:
+      - run: ${{ github.action_path }}/commit.sh
+        shell: bash
 branding:
   icon: 'git-commit'
   color: 'green'
