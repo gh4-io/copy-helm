@@ -12,6 +12,16 @@ echo "Cleaning source folder"
 echo "Removing the following files... "
 echo "$INPUT_CLEAN_FILES"
 
+if [[ -f .helmignore ]]; then
+
+  while read -r iFile; do
+    echo "$iFile" 
+    rm -rfv "$iFile"
+  done < .helmignore
+
+fi
+
+
 
 IFS="," read -r -a arr1 <<< $INPUT_CLEAN_FILES
 
