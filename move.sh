@@ -1,7 +1,4 @@
-#!/bin/bash
-
-
-set -e
+#!/bin/bash -e {0}
 
 if $INPUT_DEBUG 
 then

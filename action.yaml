@@ -35,16 +35,16 @@ runs:
   using: 'composite'
   steps:
       - run: ${{ github.action_path }}/setup.sh
-        shell: 
+        shell: bash
         name: Setup
       - run: ${{ github.action_path }}/clean.sh
-        shell: 
+        shell: bash
         name: Clean
       - run: ${{ github.action_path }}/move.sh
-        shell: 
+        shell: bash
         name: move
       - run: ${{ github.action_path }}/commit.sh
-        shell: 
+        shell: bash
         name: commit
 branding:
   icon: 'git-commit'
