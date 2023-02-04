@@ -39,6 +39,8 @@ runs:
           ls -al
           echo "==="
           ls ${{ github.action_path }}
+          echo "==="
+          printenv
         name: "List Items"
         shell: bash
       - run: ${{ github.action_path }}/setup.sh
