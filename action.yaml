@@ -42,6 +42,8 @@ runs:
           echo "==="
         name: "List Items"
         shell: bash
+      - run: env
+        shell:
       - run: ${{ github.action_path }}/setup.sh
         shell: bash
         name: Setup
