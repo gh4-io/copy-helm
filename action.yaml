@@ -44,15 +44,19 @@ runs:
       - run: ${{ github.action_path }}/setup.sh
         shell: bash
         name: Setup
+        id: list-items
       - run: ${{ github.action_path }}/clean.sh
         shell: bash
         name: Clean
+        id: clean
       - run: ${{ github.action_path }}/move.sh
         shell: bash
         name: move
+        id: move
       - run: ${{ github.action_path }}/commit.sh
         shell: bash
         name: commit
+        id: commit
 branding:
   icon: 'git-commit'
   color: 'green'
