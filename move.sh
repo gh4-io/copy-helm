@@ -15,7 +15,7 @@ git clone --single-branch --branch $INPUT_DESTINATION_BRANCH "https://$INPUT_USE
 if [ -n "$INPUT_DESTINATION_BRANCH_CREATE" ]
 then
   git checkout -b "$INPUT_DESTINATION_BRANCH_CREATE"
-  OUTPUT_BRANCH="$INPUT_DESTINATION_BRANCH_CREATE"
+  export OUTPUT_BRANCH="$INPUT_DESTINATION_BRANCH_CREATE"
 fi
 
 echo "Copying contents to git repo"

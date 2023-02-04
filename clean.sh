@@ -17,6 +17,8 @@ if [[ -f .helmignore ]]; then
 
 
   while read -r str1; do
+    # if the first line of .helmignore
+    # starts with "#" it will bypass it.
     [[ ${str1:0:1} == "#" ]] && continue
 
     echo "$str1" 
