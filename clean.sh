@@ -14,19 +14,23 @@ echo "$INPUT_CLEAN_FILES"
 
 if [[ -f .helmignore ]]; then
 
-  while read -r iFile; do
-    echo "$iFile" 
-    rm -rfv "$iFile"
+
+
+  while read -r str1; do
+    [[ ${str1:0:1} == "#" ]] && continue
+
+    echo "$str1" 
+    rm -rfv "$str1"
   done < .helmignore
 
 fi
 
 
 
-IFS="," read -r -a arr1 <<< $INPUT_CLEAN_FILES
+IFS="," read -r -a arr1 <<< "$INPUT_CLEAN_FILES"
 
 ## @discription loops through arry and removed selected files
 for files in "${arr1[@]}"; do
   # @discription -r=directories and content, -f=force, -v=verbose
-  rm -rfv "$INPUT_SOURCE_FOLDER"/$files
+  rm -rfv "${INPUT_SOURCE_FOLDER:?}"/"$files"
 done
