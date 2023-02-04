@@ -37,7 +37,7 @@ runs:
       - id: list-items
         run: ls -al
         name: "List Items"
-        shell: bah
+        shell: bash
       - run: ./setup.sh
         shell: bash
         name: Setup
