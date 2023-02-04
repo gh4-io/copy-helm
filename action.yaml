@@ -34,6 +34,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
+      - name: 'ENV'
+        run: env
+        shell: bash
       - id: list-items
         run: |
           ls -al
@@ -52,14 +55,14 @@ runs:
         shell: bash
         name: Clean
         id: clean
-      - run: ${{ github.action_path }}/move.sh
-        shell: bash
-        name: move
-        id: move
-      - run: ${{ github.action_path }}/commit.sh
-        shell: bash
-        name: commit
-        id: commit
+      # - run: ${{ github.action_path }}/move.sh
+      #   shell: bash
+      #   name: move
+      #   id: move
+      # - run: ${{ github.action_path }}/commit.sh
+      #   shell: bash
+      #   name: commit
+      #   id: commit
 branding:
   icon: 'git-commit'
   color: 'green'
