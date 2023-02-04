@@ -26,7 +26,7 @@ inputs:
     description: 'Destination branch to create for this commit'
     required: false
   clean_files:
-    description: 'Clean these files from source brfore push and commit'
+    description: 'Clean these files from source before push and commit'
     required: false
   debug:
     description: 'Used to debug content'
