@@ -34,6 +34,10 @@ inputs:
 runs:
   using: 'composite'
   steps:
+      - id: list-items
+        run: ls -al
+        name: "List Items"
+        shell: bah
       - run: ./setup.sh
         shell: bash
         name: Setup
