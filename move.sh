@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if $INPUT_DEBUG 
-then
-  set -x
-fi
+$INPUT_DEBUG && set -x
 
 CLONE_DIR=$(mktemp -d)
 
