@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if $INPUT_DEBUG 
-then
-  set -x
-fi
+[[ $INPUT_DEBUG == 'true' ]] && set -x
 
 if [ -z "$INPUT_SOURCE_FOLDER" ]
 then

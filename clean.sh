@@ -1,11 +1,6 @@
 #!/bin/bash
 
-set -e
-
-if $INPUT_DEBUG 
-then
-  set -x
-fi
+[[ $INPUT_DEBUG == 'true' ]] && set -x
 
 echo "Cleaning source folder"
 
