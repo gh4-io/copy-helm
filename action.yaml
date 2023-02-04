@@ -45,7 +45,7 @@ runs:
       - run: ${{ github.action_path }}/setup.sh
         shell: bash
         name: Setup
-        id: list-items
+        id: setup
       - run: ${{ github.action_path }}/clean.sh
         shell: bash
         name: Clean
