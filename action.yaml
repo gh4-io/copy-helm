@@ -45,7 +45,7 @@ runs:
         env:
           INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
           INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
-          INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+          INPUT_DESTINATION_REPO: ${{ inputs.destination_repo }}
           INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
           INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
           INPUT_USER_EMAIL: ${{ inputs.user_email }}
@@ -60,7 +60,7 @@ runs:
         env:
           INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
           INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
-          INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+          INPUT_DESTINATION_REPO: ${{ inputs.destination_repo }}
           INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
           INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
           INPUT_USER_EMAIL: ${{ inputs.user_email }}
@@ -75,7 +75,7 @@ runs:
         env:
           INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
           INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
-          INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+          INPUT_DESTINATION_REPO: ${{ inputs.destination_repo }}
           INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
           INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
           INPUT_USER_EMAIL: ${{ inputs.user_email }}
@@ -90,7 +90,7 @@ runs:
         env:
           INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
           INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
-          INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+          INPUT_DESTINATION_REPO: ${{ inputs.destination_repo }}
           INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
           INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
           INPUT_USER_EMAIL: ${{ inputs.user_email }}
