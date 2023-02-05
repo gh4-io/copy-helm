@@ -37,34 +37,67 @@ inputs:
 
 runs:
   using: 'composite'
-  env:
-    INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
-    INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
-    INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
-    INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
-    INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
-    INPUT_USER_EMAIL: ${{ inputs.user_email }}
-    INPUT_USER_NAME: ${{ inputs.user_name }}
-    INPUT_COMMIT_MSG: ${{ inputs.commit_msg }}
-    INPUT_CLEAN_FILES: ${{ inputs.clean_files }}
-    INPUT_DEBUG: ${{ inputs.debug }}
   steps:
       - run: ${{ github.action_path }}/setup.sh
         shell: bash
         name: Setup
         id: setup
+        env:
+          INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
+          INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
+          INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+          INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
+          INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
+          INPUT_USER_EMAIL: ${{ inputs.user_email }}
+          INPUT_USER_NAME: ${{ inputs.user_name }}
+          INPUT_COMMIT_MSG: ${{ inputs.commit_msg }}
+          INPUT_CLEAN_FILES: ${{ inputs.clean_files }}
+          INPUT_DEBUG: ${{ inputs.debug }}
       - run: ${{ github.action_path }}/clean.sh
         shell: bash
         name: Clean
         id: clean
+        env:
+          INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
+          INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
+          INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+          INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
+          INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
+          INPUT_USER_EMAIL: ${{ inputs.user_email }}
+          INPUT_USER_NAME: ${{ inputs.user_name }}
+          INPUT_COMMIT_MSG: ${{ inputs.commit_msg }}
+          INPUT_CLEAN_FILES: ${{ inputs.clean_files }}
+          INPUT_DEBUG: ${{ inputs.debug }}
       - run: ${{ github.action_path }}/move.sh
         shell: bash
         name: move
         id: move
+        env:
+          INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
+          INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
+          INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+          INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
+          INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
+          INPUT_USER_EMAIL: ${{ inputs.user_email }}
+          INPUT_USER_NAME: ${{ inputs.user_name }}
+          INPUT_COMMIT_MSG: ${{ inputs.commit_msg }}
+          INPUT_CLEAN_FILES: ${{ inputs.clean_files }}
+          INPUT_DEBUG: ${{ inputs.debug }}
       - run: ${{ github.action_path }}/commit.sh
         shell: bash
         name: commit
         id: commit
+        env:
+          INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
+          INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
+          INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+          INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
+          INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
+          INPUT_USER_EMAIL: ${{ inputs.user_email }}
+          INPUT_USER_NAME: ${{ inputs.user_name }}
+          INPUT_COMMIT_MSG: ${{ inputs.commit_msg }}
+          INPUT_CLEAN_FILES: ${{ inputs.clean_files }}
+          INPUT_DEBUG: ${{ inputs.debug }}
 
 branding:
   icon: 'git-commit'
