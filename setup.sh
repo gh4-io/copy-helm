@@ -18,3 +18,5 @@ if [ -z "$INPUT_COMMIT_MSG" ]
 then
   INPUT_COMMIT_MSG="Update $INPUT_DESTINATION_FOLDER."
 fi
+
+env

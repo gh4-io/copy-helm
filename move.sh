@@ -2,6 +2,8 @@
 
 [[ $INPUT_DEBUG == 'true' ]] && set -x
 
+env
+
 CLONE_DIR=$(mktemp -d)
 
 echo "Cloning destination git repository"
