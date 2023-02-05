@@ -33,12 +33,13 @@ inputs:
   debug:
     description: 'Used to debug content'
     required: false
+    default: 'false'
 
 runs:
   using: 'composite'
     env:
       INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
-      INPUT_DESTINATION_BRANCH: ${{ inputs. }}
+      INPUT_DESTINATION_BRANCH: ${{ inputs.branch }}
       INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
       INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
       INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
