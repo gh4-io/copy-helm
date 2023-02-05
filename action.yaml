@@ -1,5 +1,7 @@
 name: 'Push a directory to another repository'
+
 description: 'Used for pushing a copy of a folder to another repository'
+
 inputs:
   source_folder:
     description: 'Source folder from the origin directory'
@@ -31,22 +33,21 @@ inputs:
   debug:
     description: 'Used to debug content'
     required: false
+
 runs:
   using: 'composite'
+    env:
+      INPUT_SOURCE_FOLDER: ${{ inputs.source_folder }}
+      INPUT_DESTINATION_BRANCH: ${{ inputs. }}
+      INPUT_DESTINATION_REPO: ${{ inputs.destination_branch_repo }}
+      INPUT_DESTINATION_FOLDER: ${{ inputs.destination_branch_folder }}
+      INPUT_DISTINATION_BRANCH_CREATE: ${{ inputs.destination_branch_create }}
+      INPUT_USER_EMAIL: ${{ inputs.user_email }}
+      INPUT_USER_NAME: ${{ inputs.user_name }}
+      INPUT_COMMIT_MSG: ${{ inputs.commit_msg }}
+      INPUT_CLEAN_FILES: ${{ inputs.clean_files }}
+      INPUT_DEBUG: ${{ inputs.debug }}
   steps:
-      - name: 'ENV'
-        run: env
-        shell: bash
-      - id: list-items
-        run: |
-          ls -al
-          echo "==="
-          ls ${{ github.action_path }}
-          echo "==="
-        name: "List Items"
-        shell: bash
-      - run: env
-        shell:
       - run: ${{ github.action_path }}/setup.sh
         shell: bash
         name: Setup
@@ -55,14 +56,15 @@ runs:
         shell: bash
         name: Clean
         id: clean
-      # - run: ${{ github.action_path }}/move.sh
-      #   shell: bash
-      #   name: move
-      #   id: move
-      # - run: ${{ github.action_path }}/commit.sh
-      #   shell: bash
-      #   name: commit
-      #   id: commit
+      - run: ${{ github.action_path }}/move.sh
+        shell: bash
+        name: move
+        id: move
+      - run: ${{ github.action_path }}/commit.sh
+        shell: bash
+        name: commit
+        id: commit
+
 branding:
   icon: 'git-commit'
   color: 'green'
