@@ -5,7 +5,6 @@
 echo "Cleaning source folder"
 
 echo "Removing the following files... "
-echo "$INPUT_CLEAN_FILES"
 
 if [[ -f .helmignore ]]; then
 
@@ -16,18 +15,23 @@ if [[ -f .helmignore ]]; then
     # starts with "#" it will bypass it.
     [[ ${str1:0:1} == "#" ]] && continue
 
-    echo "$str1" 
+    echo "From .helmignore: $str1 ..." 
     rm -rfv "$str1"
   done < .helmignore
 
 fi
 
+if [[ -z $INPUT_CLEAN_FILES ]]; then
 
+  IFS="," read -r -a arr1 <<< "$INPUT_CLEAN_FILES"
 
-IFS="," read -r -a arr1 <<< "$INPUT_CLEAN_FILES"
+  ## @discription loops through arry and removed selected files
+  for files in "${arr1[@]}"; do
 
-## @discription loops through arry and removed selected files
-for files in "${arr1[@]}"; do
-  # @discription -r=directories and content, -f=force, -v=verbose
-  rm -rfv "${INPUT_SOURCE_FOLDER:?}"/"$files"
-done
+    echo "From .helmignore: $files ..."
+
+    # @discription -r=directories and content, -f=force, -v=verbose
+    rm -rfv "${INPUT_SOURCE_FOLDER:?}"/"$files"
+  done
+
+fi

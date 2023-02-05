@@ -19,12 +19,12 @@ echo "Copying contents to git repo"
 # shellcheck disable=SC2115
 if [ -z "$INPUT_DESTINATION_FOLDER" ]
 then
-  rm -rf "$CLONE_DIR/"*
-  cp -r "$INPUT_SOURCE_FOLDER/"* "$CLONE_DIR/"
+  rm -rf "${CLONE_DIR:?}/"*
+  cp -r "${INPUT_SOURCE_FOLDER:?}/"* "${CLONE_DIR:?}/"
 else
   rm -rf "${CLONE_DIR:?}/${INPUT_DESTINATION_FOLDER:?}/"
   mkdir -p "${CLONE_DIR:?}/${INPUT_DESTINATION_FOLDER:?}/"
-  cp -a "${INPUT_SOURCE_FOLDER:?}/." "${CLONE_DIR/$INPUT_DESTINATION_FOLDER:?}/"
+  cp -a "${INPUT_SOURCE_FOLDER:?}/." "${CLONE_DIR:?}/${INPUT_DESTINATION_FOLDER:?}/"
 fi
 
 cd "$CLONE_DIR" || exit
