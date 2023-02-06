@@ -39,10 +39,10 @@ runs:
   using: 'composite'
   steps:
       - run: | 
-          setup.sh
-          clean.sh
-          move.sh
-          commit.sh
+          ./setup.sh
+          ./clean.sh
+          ./move.sh
+          ./commit.sh
         shell: bash
         working-directory: ${{ github.action_path }}
         env:
